@@ -1,0 +1,6 @@
+25.3.3.
+  webview 생성/적용 (expo)
+  : vite 실시간 적용 확인
+
+ <-- next 포트 접속 오류 해결 -->
+  Encountered an error loading page {"canGoBack": false, "canGoForward": false, "code": -2, "description": "net::ERR_ADDRESS_UNREACHABLE", "loading": false, "target": 16, "title": "", "url": "http://192.168.0.0:192/"}
