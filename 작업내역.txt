@@ -2,5 +2,30 @@
   webview 생성/적용 (expo)
   : vite 실시간 적용 확인
 
- <-- next 포트 접속 오류 해결 -->
-  Encountered an error loading page {"canGoBack": false, "canGoForward": false, "code": -2, "description": "net::ERR_ADDRESS_UNREACHABLE", "loading": false, "target": 16, "title": "", "url": "http://192.168.0.0:192/"}
+  webview 적용 과정
+    - expo 설치
+      - "React Native WebView does not support this platform." error
+        참고: https://github.com/react-native-webview/react-native-webview/issues/2742
+
+      - "'RNCWebView' could not be found." error
+        참고
+        스타일링 적용, https://choboit.tistory.com/135
+        버전 다운그레이드, https://github.com/react-native-webview/react-native-webview/issues/2959#issuecomment-1549925312
+        빌드, 캐시 초기화
+
+	->> expo 공식 페이지 따라 한 다음 오류 발생하면 터미널에서 새로고침
+  +) 크기 스타일링 적용되어야 화면 등장, 이전 설정을 유지하는 특성이 있어 서버 종료 후 재실행 필요 
+
+25.3.4.
+  웹뷰 개발 서버 구축 완료
+
+  next 포트 접속 오류 해결
+  : 현재 IP 주소 호스트네임으로 할당, 크기 스타일링 적용 
+  ->  Encountered an error loading page {"canGoBack": false, "canGoForward": false, "code": -2, "description": "net::ERR_ADDRESS_UNREACHABLE", "loading": false, "target": 16, "title": "", "url": "http://192.168.0.0:192/"}
+
+  웹뷰 -> 콘솔로그 전달 확인
+
+  - 참고
+  웹뷰 콘솔 모범 예제: https://blog.logrocket.com/reviewing-react-native-console-logs-best-practices/
+
+ <-- 스택(라우팅) 설정 -->
