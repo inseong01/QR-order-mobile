@@ -28,4 +28,20 @@
   - 참고
   웹뷰 콘솔 모범 예제: https://blog.logrocket.com/reviewing-react-native-console-logs-best-practices/
 
- <-- 스택(라우팅) 설정 -->
+25.3.5.
+  안드로이드 애뮬레이터 개발 환경 구축
+
+  개발 빌드 환경 구축
+    - 빌드 오류 해결
+    - Expo Go 앱 환경에서 쿠키 연동 확인 어려움 
+      -> RN Cookie Manager 패키지 사용 가능
+
+    - 참고
+      쿠키 관련 설명
+      https://github.com/react-native-webview/react-native-webview/blob/master/docs/Guide.md#managing-cookies
+      https://github.com/react-native-cookies/cookies?tab=readme-ov-file#expo
+
+
+<-- 스택(라우팅) 설정, (tabs) 적용 안 됨 -->
+- 참고
+https://stackoverflow.com/questions/78262235/how-to-set-a-specific-tab-as-the-initial-route-in-expo-router-without-an-index-t

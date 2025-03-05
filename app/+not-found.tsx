@@ -1,9 +1,9 @@
+import { Stack } from 'expo-router';
 import { useRef } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { Platform, SafeAreaView, StyleSheet, View } from 'react-native';
 import { WebView, WebViewMessageEvent } from 'react-native-webview';
-import { Link, router, Stack } from 'expo-router';
 
-export default function Index() {
+export default function NotFoundScreen() {
   const webviewRef = useRef<WebView>(null);
 
   function onMessage(e: WebViewMessageEvent) {
@@ -12,19 +12,13 @@ export default function Index() {
 
   console.log('Platform', Platform.OS);
 
-  // 강제 이동 (개발 임시 적용)
-  function onLoadStart() {
-    router.replace('/');
-  }
-
   return (
     <View style={styles.container}>
-      <Stack.Screen name="index" options={{ title: 'Home' }} />
+      <Stack.Screen name="index" options={{ title: 'Not found...' }} />
       <WebView
         ref={webviewRef}
-        source={{ uri: `http://192.168.0.13:3000/` }}
+        source={{ uri: `http://192.168.0.13:3000/0/not-found` }}
         onMessage={onMessage}
-        // onLoadStart={onLoadStart}
         sharedCookiesEnabled={true}
         javaScriptEnabled={true}
       />
