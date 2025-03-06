@@ -41,7 +41,14 @@
       https://github.com/react-native-webview/react-native-webview/blob/master/docs/Guide.md#managing-cookies
       https://github.com/react-native-cookies/cookies?tab=readme-ov-file#expo
 
+25.3.6.
+  하단 탭, (tabs) 적용
+  : index.tsx 파일 (tabs) 디렉터리 안에 포함시킴
 
-<-- 스택(라우팅) 설정, (tabs) 적용 안 됨 -->
-- 참고
-https://stackoverflow.com/questions/78262235/how-to-set-a-specific-tab-as-the-initial-route-in-expo-router-without-an-index-t
+  웹뷰 내부 링크 이동 스택 확인
+
+  참고
+    - webview API
+    https://github.com/react-native-webview/react-native-webview/blob/master/docs/Reference.md
+
+<-- 뒤로가기 버튼 goBack() 적용 -->

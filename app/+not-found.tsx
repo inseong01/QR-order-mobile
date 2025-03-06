@@ -1,4 +1,4 @@
-import { Stack } from 'expo-router';
+import { Link, Stack } from 'expo-router';
 import { useRef } from 'react';
 import { Platform, SafeAreaView, StyleSheet, View } from 'react-native';
 import { WebView, WebViewMessageEvent } from 'react-native-webview';
@@ -10,8 +10,6 @@ export default function NotFoundScreen() {
     console.log('Get Message!', e.nativeEvent.data);
   }
 
-  console.log('Platform', Platform.OS);
-
   return (
     <View style={styles.container}>
       <Stack.Screen name="index" options={{ title: 'Not found...' }} />
@@ -22,6 +20,7 @@ export default function NotFoundScreen() {
         sharedCookiesEnabled={true}
         javaScriptEnabled={true}
       />
+      <Link href="/">go back</Link>
     </View>
   );
 }
