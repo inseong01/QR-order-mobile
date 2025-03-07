@@ -51,4 +51,32 @@
     - webview API
     https://github.com/react-native-webview/react-native-webview/blob/master/docs/Reference.md
 
-<-- 뒤로가기 버튼 goBack() 적용 -->
+25.3.7.
+  하단 탭 기능 삭제
+  : (tabs) 기능 요구되지 않음
+
+  웹뷰 링크 연결 이후 미동작 오류 수정  
+  : 웹뷰 네비게이팅 설정
+
+  웹뷰 쿠키 연동
+  : CookieManager 라이브러리 도입
+
+  웹뷰 안드로이드 동작 점검
+  : 쿠키 유무 동작 확인
+
+  참고
+    - Stack, Linking, Layout 강의
+    https://www.youtube.com/watch?v=D4XAhkjJXD4
+
+<-- 쿠키 속성 오류 -->
+// httpOnly, path 속성 부여 안 됨
+{ 
+  table: { 
+    domain: null, 
+    httpOnly: false, 
+    name: 'table', 
+    path: null, 
+    secure: false, 
+    value: '2' 
+  } 
+};
