@@ -3,20 +3,25 @@ import { StyleSheet, View } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { Stack } from 'expo-router';
 import CookieManager from '@react-native-cookies/cookies';
+import { WebViewMessageEvent } from 'react-native-webview/lib/WebViewTypes';
 
 import { githubConnect } from '@/src/function/link/githubConnect';
 import { notFoundConnect } from '@/src/function/link/notFoundConnect';
 import { mainPageConnect } from '@/src/function/link/mainPageConnect';
-import { productURL } from '@/src/types/common';
+import { ProductURL } from '@/src/types/common';
 
 export default function Index() {
-  const productURL: productURL = 'http://192.168.0.13:3000';
+  const productURL: ProductURL = process.env.EXPO_PUBLIC_PRODUCTION_URL;
   const webviewRef = useRef<WebView>(null);
   const [uri, setURI] = useState(`${productURL}/2`);
 
   useEffect(() => {
     CookieManager.clearAll();
   }, []);
+
+  function onMessage(event: WebViewMessageEvent) {
+    console.log(event.nativeEvent.data);
+  }
 
   return (
     <View style={styles.container}>
@@ -35,6 +40,7 @@ export default function Index() {
           // 본 페이지 접속
           mainPageConnect({ url, productURL });
         }}
+        onMessage={onMessage}
       />
     </View>
   );

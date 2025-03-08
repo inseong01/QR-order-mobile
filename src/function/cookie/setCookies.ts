@@ -7,6 +7,5 @@ export async function setCookies({ url, tableName }: { url: string; tableName: s
     path: '/',
     httpOnly: true,
   };
-  const setCookies = await CookieManager.set(url, cookies);
-  console.log('2, Cookies set =>', setCookies);
+  await CookieManager.set(url, cookies);
 }

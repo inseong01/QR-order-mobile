@@ -1,8 +1,8 @@
-import { productURL } from '../../types/common';
+import { ProductURL } from '../../types/common';
 import { checkValidTableValue } from '../checkValidTableValue';
 import { setCookies } from '../cookie/setCookies';
 
-export async function mainPageConnect({ url, productURL }: { url: string; productURL: productURL }) {
+export async function mainPageConnect({ url, productURL }: { url: string; productURL: ProductURL }) {
   if (url.startsWith(`${productURL}/`)) {
     // tableName 여부 검증
     const urlArr = url.split('/');
