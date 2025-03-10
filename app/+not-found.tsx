@@ -4,12 +4,14 @@ import { WebView } from 'react-native-webview';
 import { Stack } from 'expo-router';
 import { WebViewMessageEvent } from 'react-native-webview/lib/WebViewTypes';
 
-import { ProductURL } from '@/src/types/common';
+import { WebViewURL } from '@/src/types/common';
 
 export default function NotFound() {
-  const productURL: ProductURL = process.env.EXPO_PUBLIC_PRODUCTION_URL;
+  const NodeEnv = process.env.NODE_ENV;
+  const webViewURI: WebViewURL =
+    NodeEnv === 'development' ? process.env.EXPO_PUBLIC_DEV_URL : process.env.EXPO_PUBLIC_PRODUCTION_URL;
   const webviewRef = useRef<WebView>(null);
-  const [uri, setURI] = useState(`${productURL}/0/not-found`);
+  const [uri, setURI] = useState(`${webViewURI}/0/not-found`);
 
   function onMessage(event: WebViewMessageEvent) {
     console.log(event.nativeEvent.data);

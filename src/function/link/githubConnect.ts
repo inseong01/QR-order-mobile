@@ -1,5 +1,5 @@
-import * as Linking from 'expo-linking';
 import { RefObject } from 'react';
+import * as Linking from 'expo-linking';
 import WebView from 'react-native-webview';
 
 export function githubConnect({ url, webviewRef }: { url: string; webviewRef: RefObject<WebView> }) {

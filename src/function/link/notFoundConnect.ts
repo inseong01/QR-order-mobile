@@ -1,6 +1,6 @@
-import { ProductURL } from '../../types/common';
+import { WebViewURL } from '../../types/common';
 
-export function notFoundConnect({ url, productURL }: { url: string; productURL: ProductURL }) {
-  if (url.startsWith(`${productURL}/0/not-found`)) {
+export function notFoundConnect({ url, webViewURI }: { url: string; webViewURI: WebViewURL }) {
+  if (url.startsWith(`${webViewURI}/0/not-found`)) {
   }
 }

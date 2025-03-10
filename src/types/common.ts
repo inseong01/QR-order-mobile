@@ -1,1 +1,3 @@
-export type ProductURL = 'http://192.168.0.13:3000' | 'https://qr-order-client.vercel.app';
+type ProductURL = 'https://qr-order-client.vercel.app';
+type DevURL = 'http://192.168.0.4:3000';
+export type WebViewURL = ProductURL | DevURL;
