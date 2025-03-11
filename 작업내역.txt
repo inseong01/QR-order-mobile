@@ -78,7 +78,18 @@
   
   다중 웹뷰 작업
 
-<-- url 전달 해결, 쿠키 속성 오류 -->
+25.3.11.
+  안드로이드, 앱 종료 알림 구현
+  : reanimated 라이브러리 사용
+
+  뒤로가기 버튼 라우팅 이동 기능 구현
+  : 다중 웹뷰에서 히스토리 공유 문제 발생하여 단일 웹뷰 사용
+
+  참고
+    - reanimated
+    https://docs.swmansion.com/react-native-reanimated/docs/animations/withTiming
+    
+<-- 라우팅 이동 시 history 상태 점검, 쿠키 속성 오류 -->
 // httpOnly, path 속성 부여 안 됨
 { 
   table: { 
