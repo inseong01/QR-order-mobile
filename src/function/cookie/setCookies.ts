@@ -9,3 +9,9 @@ export async function setCookies({ url, tableName }: { url: string; tableName: s
   };
   await CookieManager.set(url, cookies);
 }
+
+export async function findTableCookie({ url }: { url: string }) {
+  const { table } = await CookieManager.get(url);
+  if (table.value) return true;
+  return false;
+}
