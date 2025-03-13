@@ -7,9 +7,7 @@ import { WebViewMessageEvent } from 'react-native-webview/lib/WebViewTypes';
 import { WebViewURL } from '@/src/types/common';
 
 export default function NotFound() {
-  const NodeEnv = process.env.NODE_ENV;
-  const webViewURI: WebViewURL =
-    NodeEnv === 'development' ? process.env.EXPO_PUBLIC_DEV_URL : process.env.EXPO_PUBLIC_PRODUCTION_URL;
+  const webViewURI: WebViewURL = process.env.EXPO_PUBLIC_DEV_URL;
   const webviewRef = useRef<WebView>(null);
   const [uri, setURI] = useState(`${webViewURI}/0/not-found`);
 

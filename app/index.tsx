@@ -18,9 +18,7 @@ const deviceHeight = Dimensions.get('window').height;
 
 export default function Index() {
   // variant
-  const nodeEnv = process.env.NODE_ENV;
-  const webViewURI: WebViewURL =
-    nodeEnv === 'development' ? process.env.EXPO_PUBLIC_DEV_URL : process.env.EXPO_PUBLIC_PRODUCTION_URL;
+  const webViewURI: WebViewURL = process.env.EXPO_PUBLIC_DEV_URL;
   // reanimated
   const opacity = useSharedValue(0);
   const translateY = useSharedValue(deviceHeight - 100);

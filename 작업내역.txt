@@ -103,4 +103,25 @@
 25.3.13.
   코드 주석 수정 및 추가
   
+  Expo 빌드 오류 수정
+  : npx expo-doctor@latest 입력해 해결 방법 알 수 있음
+
+  환경변수 webview 변수 수정
+  : 개발 모드로 디버깅 하고 있어 배포 때 'production' 구분 어려움, 개발 빌드할 때 변수 개별 수정 적용
+
+  1. expo-doctor 실행 이후 출력 로그
+  ✖ [Validate packages against React Native Directory package metadata]
+  The following issues were found when validating your dependencies against React Native Directory:
+  Unmaintained: @react-native-cookies/cookies
+  Advice:
+  - Use libraries that are actively maintained and support the New Architecture. Find alternative libraries with https://reactnative.directory.
+  - Add packages to expo.doctor.reactNativeDirectoryCheck.exclude in package.json to selectively skip validations, if the warning is not relevant.
+
+  2. 빌드 오류
+  🤖 Android build failed:
+  Unknown error. See logs of the Fix gradlew build phase for more information.
+
+  3. 개발 빌드 오류, java.lang.nullpointerexception
+  android 빌드 파일이 없어 발생
+
 <--  -->
