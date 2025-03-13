@@ -3,7 +3,7 @@ import { HistoryState } from '@/src/types/common';
 export function setHistoryStack({ url, historyState }: { url: string; historyState: HistoryState }) {
   const { isGoBack, history, setHistory } = historyState;
 
-  // history 설정
+  // history 이전 인덱스 설정
   const index = history.length === 0 ? 0 : history.length - 1;
 
   // 현재 URL PUSH 반복 방지
@@ -20,6 +20,7 @@ export function setHistoryStack({ url, historyState }: { url: string; historySta
       return;
     }
 
+    // 히스토리 추가
     setHistory((prev) => [...prev, url]);
   }
 }

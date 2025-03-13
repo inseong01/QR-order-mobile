@@ -98,5 +98,9 @@
   쿠키 속성 오류 원인 조사
   : httpOnly/path 속성 부여 안 됨, 예상된 출력으로 쿠키는 정상동작 
   https://github.com/react-native-cookies/cookies/issues/70
+
+
+25.3.13.
+  코드 주석 수정 및 추가
   
 <--  -->
