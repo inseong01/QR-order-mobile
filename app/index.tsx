@@ -3,7 +3,7 @@ import { WebView } from 'react-native-webview';
 import { useEffect, useRef, useState } from 'react';
 import CookieManager from '@react-native-cookies/cookies';
 import Animated, { useSharedValue } from 'react-native-reanimated';
-import { BackHandler, Dimensions, StyleSheet, Text, View } from 'react-native';
+import { BackHandler, StyleSheet, Text, View } from 'react-native';
 
 import { WebViewURL } from '@/src/types/common';
 import { githubConnect } from '@/src/function/link/githubConnect';
@@ -13,18 +13,17 @@ import { setHistoryStack } from '@/src/function/window/setHistoryStack';
 import { goBackPrevPage } from '@/src/function/window/goBackPrevPage';
 import { flashMsgAnimate } from '@/src/function/window/flashMsgAnimate';
 
-const deviceWidth = Dimensions.get('window').width;
-const deviceHeight = Dimensions.get('window').height;
-
 export default function Index() {
   // variant
   const webViewURI: WebViewURL = process.env.EXPO_PUBLIC_DEV_URL;
   // reanimated
-  const opacity = useSharedValue(0);
-  const translateY = useSharedValue(deviceHeight - 100);
+  const translateY = useSharedValue(-28);
   // useRef
   const webviewRef = useRef<WebView>(null);
   const timemoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const shutDownTimemoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const backBtnClickCount = useRef(0);
+  const isImmediated = useRef(false);
   // useState
   const [uri, setURI] = useState(`${webViewURI}`);
   const [prevGoBackState, setPrevGoBackState] = useState(false);
@@ -33,7 +32,34 @@ export default function Index() {
 
   // 안드로이드 전용, 뒤로가기 기능 설정
   function hardwareBackPress() {
-    const sharedValues = { opacity, translateY, deviceHeight };
+    const sharedValues = { translateY };
+    backBtnClickCount.current += 1;
+
+    // 강제 종료 시도
+    if (backBtnClickCount.current === 1) {
+      isImmediated.current = true;
+
+      // 시도 제한 시간
+      if (!shutDownTimemoutRef.current) {
+        shutDownTimemoutRef.current = setTimeout(() => {
+          isImmediated.current = false;
+          backBtnClickCount.current = 0;
+          shutDownTimemoutRef.current = null;
+        }, 650);
+      }
+    }
+
+    // 강제 종료
+    if (isImmediated.current && backBtnClickCount.current >= 4) {
+      // 설정 초기화
+      flashMsgAnimate('INIT', { sharedValues });
+      setCanExit(false);
+      setHistory([]);
+      isImmediated.current = false;
+      backBtnClickCount.current = 0;
+      shutDownTimemoutRef.current = null;
+      return false;
+    }
 
     // 이전 히스토리가 있을 때
     if (history.length > 1) {
@@ -41,6 +67,7 @@ export default function Index() {
       return true;
     }
 
+    // 이전 히스토리가 없을 때
     // 앱 종료
     if (canExit) {
       if (timemoutRef.current) clearTimeout(timemoutRef.current);
@@ -48,6 +75,7 @@ export default function Index() {
       // 재접속, 설정 초기화
       flashMsgAnimate('INIT', { sharedValues });
       setCanExit(false);
+      setHistory([]);
 
       return false;
     }
@@ -106,8 +134,8 @@ export default function Index() {
           setPrevGoBackState(currentGobackState);
         }}
       />
-      <Animated.View style={[{ opacity }, { translateY }, styles.flashMsg, StyleSheet.absoluteFill]}>
-        <Text>한 번 더 누르면 종료됩니다.</Text>
+      <Animated.View style={[{ translateY }, styles.animatedBox, StyleSheet.absoluteFill]}>
+        <Text style={styles.flashMsg}>한 번 더 누르면 종료됩니다.</Text>
       </Animated.View>
     </View>
   );
@@ -117,10 +145,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  animatedBox: {
+    width: '100%',
+    height: 28,
+    display: 'flex',
+    alignItems: 'center',
+  },
   flashMsg: {
-    width: 170,
-    height: 20,
+    width: '100%',
+    height: 28,
     position: 'absolute',
-    transform: [{ translateX: deviceWidth / 2 - 85 }],
+    textAlign: 'center',
+    color: 'white',
+    fontSize: 12,
+    lineHeight: 12,
+    backgroundColor: '#4CAFF8',
+    paddingLeft: 16,
+    paddingRight: 16,
+    paddingTop: 8,
+    paddingBottom: 8,
   },
 });

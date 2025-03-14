@@ -124,4 +124,22 @@
   3. 개발 빌드 오류, java.lang.nullpointerexception
   android 빌드 파일이 없어 발생
 
+  - 빌드 이슈
+  Your project archive is 388 MB. You can reduce its size and the time it takes to upload by excluding files that are unnecessary for the build process in .easignore file.
+  https://github.com/expo/fyi/blob/main/eas-build-archive.md 
+
+25.3.14.
+  안드로이드 개발 빌드 점검 및 수정
+  : 앱 종료 문구 등장 위치 재조정, 스타일링 수정
+
+  예외 처리 상황 점검 및 수정
+  : /0/not-found, /, /github 
+
+  주문 팝업 미클릭 오류 해결
+  : Animate 태그 { flex: 1 } 원인, 너비/높이 지정하여 이외 부분 선택 가능하도록 해결  
+
+  강제 종료 기능 구현
+  : 650ms 기준 4번 이상 이전 버튼 클릭 시 앱 종료
+  
 <--  -->
+  주문 이후 이전 버튼 클릭 시 주문 제거 되지 않음 - 배포 사이트 문제

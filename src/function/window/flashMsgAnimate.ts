@@ -1,26 +1,23 @@
-import { withTiming } from 'react-native-reanimated';
+import { Easing, withTiming } from 'react-native-reanimated';
 
 import { AnimatedType, SharedValues } from '@/src/types/common';
 
 export function flashMsgAnimate(animatedType: AnimatedType, { sharedValues }: { sharedValues: SharedValues }) {
-  const { opacity, translateY, deviceHeight } = sharedValues;
+  const { translateY } = sharedValues;
 
   switch (animatedType) {
     case 'IN': {
-      opacity.set((prev) => (prev = withTiming(1, { duration: 250 })));
-      translateY.set((prev) => (prev = withTiming(deviceHeight - 110, { duration: 250 })));
+      translateY.set((prev) => (prev = withTiming(0, { duration: 500, easing: Easing.bezier(0.25, 0.1, 0.25, 1) })));
 
       break;
     }
     case 'OUT': {
-      opacity.set((prev) => (prev = withTiming(0, { duration: 250 })));
-      translateY.set((prev) => (prev = withTiming(deviceHeight - 100, { duration: 250 })));
+      translateY.set((prev) => (prev = withTiming(-28, { duration: 500, easing: Easing.bezier(0.25, 0.1, 0.25, 1) })));
 
       break;
     }
     case 'INIT': {
-      opacity.set((prev) => (prev = withTiming(0, { duration: 0 })));
-      translateY.set((prev) => (prev = withTiming(deviceHeight - 100, { duration: 0 })));
+      translateY.set((prev) => (prev = withTiming(-28, { duration: 0 })));
 
       break;
     }

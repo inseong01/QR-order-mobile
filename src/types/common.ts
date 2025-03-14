@@ -6,9 +6,7 @@ type DevURL = 'http://192.168.0.29:3000/2';
 export type WebViewURL = DevProductURL | DevURL;
 
 export type SharedValues = {
-  opacity: SharedValue<number>;
   translateY: SharedValue<number>;
-  deviceHeight: number;
 };
 
 export type AnimatedType = 'IN' | 'OUT' | 'INIT';
