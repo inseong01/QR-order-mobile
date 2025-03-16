@@ -1,7 +1,7 @@
 import { SetStateAction } from 'react';
 import { SharedValue } from 'react-native-reanimated';
 
-type DevProductURL = 'https://qr-order-client.vercel.app/3';
+type DevProductURL = 'https://qr-order-client.vercel.app/2';
 type DevURL = 'http://192.168.0.29:3000/2';
 export type WebViewURL = DevProductURL | DevURL;
 

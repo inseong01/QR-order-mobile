@@ -150,4 +150,10 @@
   개발 빌드 앱 아이콘, 전경, 스플래시 사진 수정
   : expo-splash-screen, backgroundColor는 기기 상태창 색상에 영향 줌
 
+25.3.16.
+  history 상태 관리 코드 수정
+
+  README gif 삽입
+
+  README 마무리 작성
 <--  -->

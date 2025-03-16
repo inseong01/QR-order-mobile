@@ -12,7 +12,7 @@ export function setHistoryStack({ url, historyState }: { url: string; historySta
     if (index >= 1) {
       // 라우팅 여부 변화 감지
       if (isGoBack) {
-        setHistory((prev) => [...prev.slice(0, prev.length - 1)]);
+        setHistory((prev) => [...prev.slice(0, 1)]);
         return;
       }
 
