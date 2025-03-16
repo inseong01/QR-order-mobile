@@ -29,7 +29,7 @@ QR 오더 앱은 [QR-order-customer](https://github.com/inseong01/QR-order-custo
 
 ### 외부 앱 연결 및 앱 종료
 
-<img src='./docs/src/gif/qr_order_mobile-rootPage_1.gif' width='45%'>
+<img src='./docs/src/gif/qr_order_mobile-rootPage_3.gif' width='45%'>
 
 ## 어떻게 개발했는지, 그 과정을 공개할게요 🙂
 
