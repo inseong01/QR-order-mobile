@@ -19,6 +19,8 @@ QR 오더 앱은 [QR-order-customer](https://github.com/inseong01/QR-order-custo
 
 ## 앱 사용 장면을 가져와봤어요 📷
 
+gif 파일을 불러오는 중에는 화면이 뜨지 않을 수 있어요.
+
 #### 앱 시작 및 주문하기
 
 <img src='./docs/src/gif/qr_order_mobile-orderProcess_1.gif' width='45%'>
