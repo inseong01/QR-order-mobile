@@ -19,15 +19,15 @@ QR 오더 앱은 [QR-order-customer](https://github.com/inseong01/QR-order-custo
 
 ## 앱 사용 장면을 가져와봤어요 📷
 
-### 앱 시작 및 주문하기
+#### 앱 시작 및 주문하기
 
 <img src='./docs/src/gif/qr_order_mobile-orderProcess_1.gif' width='45%'>
 
-### 카테고리 이동
+#### 카테고리 이동
 
 <img src='./docs/src/gif/qr_order_mobile-categoryMove_1.gif' width='45%'>
 
-### 외부 앱 연결 및 앱 종료
+#### 외부 앱 연결 및 앱 종료
 
 <img src='./docs/src/gif/qr_order_mobile-rootPage_3.gif' width='45%'>
 
@@ -42,14 +42,14 @@ QR 오더 앱은 [QR-order-customer](https://github.com/inseong01/QR-order-custo
 다음으로는 `React Native` 개발 환경을  
 설정한 과정과 마주쳤던 이슈를 간략하게 담았어요.
 
-[Next.js, 웹뷰 도입 과정(1) - Expo 설치](https://inseong1204.tistory.com/127)  
-[Next.js 웹뷰 도입 과정(2) - 디버그 환경 구축](https://inseong1204.tistory.com/128)  
-[Next.js, 웹뷰 도입 과정(3) - 오류 해결 목록](https://inseong1204.tistory.com/129)
+[웹뷰 도입 과정(1) - Expo 설치](https://inseong1204.tistory.com/127)  
+[웹뷰 도입 과정(2) - 디버그 환경 구축](https://inseong1204.tistory.com/128)  
+[웹뷰 도입 과정(3) - 오류 해결 목록](https://inseong1204.tistory.com/129)
 
 마지막으로 기능 구현 과정에 대해서 알려드릴게요.
 
-[QR-ORDER 고객 주문 서비스, 웹뷰 기능 구현(1) - 외부 링크 연결, 쿠키 연동](https://inseong1204.tistory.com/131)  
-[QR-ORDER 고객 주문 서비스, 웹뷰 기능 구현(2) - 더블 클릭 종료, 뒤로 가기](https://inseong1204.tistory.com/132)
+[웹뷰 기능 구현(1) - 외부 링크 연결, 쿠키 연동](https://inseong1204.tistory.com/131)  
+[웹뷰 기능 구현(2) - 더블 클릭 종료, 뒤로 가기](https://inseong1204.tistory.com/132)
 
 ## 앱을 보여드리지 못해서 아쉬워요 😢
 

@@ -156,4 +156,6 @@
   README gif 삽입
 
   README 마무리 작성
+
+  README 내용 수정
 <--  -->
