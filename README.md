@@ -64,3 +64,7 @@ PC에서 문서를 읽고 계신다면,
 ![1번 테이블](./docs/src/img/table-1-QRcode.png)
 
 지금까지 QR 오더 앱 소개였습니다.
+
+---
+
+<img src="./docs/src/img/qr-order-logo.png" width="150px" align="right" />
