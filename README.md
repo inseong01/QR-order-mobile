@@ -33,9 +33,9 @@ gif 파일을 불러오는 중에는 화면이 뜨지 않을 수 있어요.
 
 <img src='./docs/src/gif/qr_order_mobile-rootPage_3.gif' width='45%'>
 
-## 어떻게 개발했는지, 그 과정을 공개할게요 🙂
+## 어떻게 개발했는지, 그 과정을 알려드릴게요 🙂
 
-해당 주제를 클릭하면 [개발 블로그](https://inseong1204.tistory.com/category/%EA%B0%9C%EB%B0%9C%20%EB%AC%B8%EC%84%9C%3A%20FrontEnd)로 연결되도록 설정했어요.
+해당 주제를 클릭하면 [블로그: 개발 카테고리](https://inseong1204.tistory.com/category/Frontend)로 연결되도록 설정했어요.
 
 먼저, 웹뷰 도입하게 된 계기를 알려드릴게요.
 
